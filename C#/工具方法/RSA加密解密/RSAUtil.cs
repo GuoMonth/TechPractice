@@ -65,7 +65,6 @@ namespace RSA加密解密
         /// <summary>
         /// RSA加密
         /// </summary>
-        /// <param name="xmlPublicKey"></param>
         /// <param name="content"></param>
         /// <returns></returns>
         public static string RSAEncrypt(string content)
@@ -83,7 +82,6 @@ namespace RSA加密解密
         /// <summary>
         /// RSA解密
         /// </summary>
-        /// <param name="xmlPrivateKey"></param>
         /// <param name="content"></param>
         /// <returns></returns>
         public static string RSADecrypt(string content)

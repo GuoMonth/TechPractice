@@ -115,6 +115,12 @@ namespace RSA加密解密
 
         #region 有参构造函数
 
+        /// <summary>
+        /// 有参构造函数
+        /// </summary>
+        /// <param name="privateKey"></param>
+        /// <param name="publicKey"></param>
+        /// <param name="keySize"></param>
         public RSASecretKey(string privateKey, string publicKey, int keySize)
         {
             m_privateKey = privateKey;
@@ -122,6 +128,10 @@ namespace RSA加密解密
             m_keySize = keySize;
         }
 
+        /// <summary>
+        /// RSASecretKey.ToString生成的格式化字符串
+        /// </summary>
+        /// <param name="rsaSecretKeyStr"></param>
         public RSASecretKey(string rsaSecretKeyStr)
         {
             string[] strArray = rsaSecretKeyStr.Split('\r');
@@ -150,7 +160,6 @@ namespace RSA加密解密
         /// 方便将密钥给第三方系统。第三方系统一般都只接收base64的格式。
         /// xml private key -> base64 private key string
         /// </summary>
-        /// <param name="xmlPrivateKey"></param>
         /// <returns></returns>
         private string PrivateKeyToBase64String()
         {
@@ -174,7 +183,6 @@ namespace RSA加密解密
         /// <summary>
         /// xml public key -> base64 public key string
         /// </summary>
-        /// <param name="xmlPublicKey"></param>
         /// <returns></returns>
         private string PublicKeyToBase64String()
         {
@@ -194,7 +202,7 @@ namespace RSA加密解密
         /// <summary>
         /// base64 private key string -> xml private key
         /// </summary>
-        /// <param name="privateKey"></param>
+        /// <param name="privateKeyBase64Str"></param>
         /// <returns></returns>
         private string ToXmlPrivateKey(string privateKeyBase64Str)
         {
@@ -221,7 +229,7 @@ namespace RSA加密解密
         /// <summary>
         /// base64 public key string -> xml public key
         /// </summary>
-        /// <param name="pubilcKey"></param>
+        /// <param name="pubilcKeyBase64Str"></param>
         /// <returns></returns>
         private string ToXmlPublicKey(string pubilcKeyBase64Str)
         {
