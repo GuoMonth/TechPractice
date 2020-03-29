@@ -1,0 +1,10 @@
+##ignore this file##
+bin
+obj
+.classpath
+.project
+.settings    
+.vs 
+ ##filter databfile、sln file##
+*.pdb  
+*.sln   
