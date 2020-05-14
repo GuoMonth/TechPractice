@@ -7,4 +7,3 @@ obj
 .vs 
  ##filter databfile、sln file##
 *.pdb  
-*.sln   
