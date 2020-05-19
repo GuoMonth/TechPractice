@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Excel数据导入.OracleDbAccess
 {
-    class OracleDbManager : IDisposable
+    public class OracleDbManager : IDisposable
     {
         #region 变量
 
