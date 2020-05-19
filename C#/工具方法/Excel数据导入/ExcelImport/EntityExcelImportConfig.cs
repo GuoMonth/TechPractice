@@ -12,29 +12,8 @@ namespace Excel数据导入.ExcelImport
     /// <summary>
     /// 郭升
     /// 2020年5月19日
-    /// xml完整结构示例：
-    /// <![CDATA[
-    /// 
-    /// <ECXEL_IMPORT MENU_NAME="" TABLE_NAME="">
-    ///     <COL_DEFINE>
-    ///         <COL EXCEL_COL_NAME = ""  DBTABLE_COL_NAME=""  DATA_TYPE="" DEFAULT_VALUE=""><COL/>
-    ///     </COL_DEFINE>
-    ///     <AFTER_IMPORT_CALL_BACK>FUNCTION_NAME</AFTER_IMPORT_CALL_BACK>
-    /// </ECXEL_IMPORT>
-    /// 
-    /// 说明：
-    /// ECXEL_IMPORT节点 一个excel导入配置 一个菜单数据对应一张表 属性：
-    ///     MENU_NAME：菜单名称
-    ///     TABLE_NAME：数据库表名
-    /// <COL_DEFINE>节点 excel中列的定义。定义和数据库表字段的映射关系和检查规则
-    ///     EXCEL_COL_NAME：（可缺省）excel中列名。如果此属性为空。说明此列在excel中没有对应的列，使用默认值进行数据导入。如果没有默认值，则导入空数据
-    ///     DBTABLE_COL_NAME：对应数据库表的列名。
-    ///     DEFAULT_VALUE：可缺省）定义列的默认值
-    /// <AFTER_IMPORT_CALL_BACK>节点 回调函数定义。导入完成后回调。此节点可缺省，节点值为导入完成后回调函数的名称
-    ///     
-    /// ]]>
     /// </summary>
-    public class EntityExcelImportConfig
+    internal class EntityExcelImportConfig
     {
         /*
          XML配置示例：
@@ -166,24 +145,22 @@ namespace Excel数据导入.ExcelImport
         public override string ToString()
         {
 
-            return string.Format("<ECXEL_IMPORT ID=\"{0}\" TABLE_NAME=\"{1}\">{2}<AFTER_IMPORT_CALL_BACK>{3}</AFTER_IMPORT_CALL_BACK></ECXEL_IMPORT>"
+            return string.Format("<ECXEL_IMPORT ID=\"{0}\" TABLE_NAME=\"{1}\"><COL_DEFINE>{2}</COL_DEFINE><AFTER_IMPORT_CALL_BACK>{3}</AFTER_IMPORT_CALL_BACK></ECXEL_IMPORT>"
                 , m_ID, m_TableName
-                , string.Join("", m_ColsDefine.Select(
-                    c => string.Format("<COL_DEFINE>{0}</COL_DEFINE>", c.ToString()))
-                )
+                , string.Join("", m_ColsDefine.Select(c=>c.ToString()))
                 , m_AfterImportCallBack
                 );
         }
 
         #endregion
+
     }
 
     #region 一个列的定义
     /// <summary>
     /// excel导入一个列的定义
-    /// <![CDATA[<COL_DEFINE><COL EXCEL_COL_NAME = ""  DBTABLE_COL_NAME=""  DATA_TYPE="" DEFAULT_VALUE=""><COL/></COL_DEFINE>]]>
     /// </summary>
-    public class ExcelImportColDefineEntity
+    internal class ExcelImportColDefineEntity
     {
         private XmlElement m_xmlElement;
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Excel数据导入.ExcelImport
 {
-    public enum EnumDefaultValue
+    internal enum EnumDefaultValue
     {
         /// <summary>
         /// 无默认值
