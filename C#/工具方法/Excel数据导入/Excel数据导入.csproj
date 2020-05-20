@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="ExcelImport\EntityExcelImportConfig.cs" />
     <Compile Include="ExcelImport\EnumDefaultValue.cs" />
+    <Compile Include="ExcelImport\ExcelImport.cs" />
     <Compile Include="OracleDbAccess\OracleDbManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
